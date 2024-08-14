@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير المعوقات لخط مجاردة</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: right;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>تقرير المعوقات لخط مجاردة</h1>
+    <p id="currentDateTime"></p>
+   
+    <p> تاريخ كتابة التقرير : ١٣/٨/٢٠٢٤</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>التسلسل</th>
+                <th>الوصف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>١</td><td>المقاول حفيظ لم يبدء في الاسوار</td></tr>
+            <tr><td>٢</td><td>المقاول حفيظ لم يبدء في النيم بليت</td></tr>
+            <tr><td>٣</td><td>خطاب الانذار لاحمد عسيري ( لم يقم بإنهاء اي شافت حتى تاريخه )</td></tr>
+            <tr><td>٤</td><td>مطلوب البوكلين لانهاء اعمال الامارة في بحر ابو سكينة</td></tr>
+            <tr><td>٥</td><td>سامح لم يبدء في تصنيع عدد ٧٣ غطاء الومينيوم لوجود مشاكل مالية ( فواتير سابقة لم تصرف )</td></tr>
+            <tr><td>٦</td><td>مطلوب الجاك همر لخزانات بارق و قنا</td></tr>
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <button onclick="printTable()">طباعة الجدول</button>
+        <button onclick="copyTable()">نسخ الجدول</button>
+    </div>
+
+    <script>
+        // Set current date and time
+        document.getElementById('currentDateTime').innerText = `التاريخ والوقت الحالي: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}`;
+
+        // Function to print the table
+        function printTable() {
+            const originalContent = document.body.innerHTML;
+            const tableContent = document.querySelector('table').outerHTML;
+            document.body.innerHTML = tableContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+
+        // Function to copy the table content
+        function copyTable() {
+            const table = document.querySelector('table').outerHTML;
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = table;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            alert("تم نسخ محتوى الجدول إلى الحافظة!");
+        }
+    </script>
+    
+</body>
+</html>
