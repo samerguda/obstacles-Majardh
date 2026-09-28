@@ -3,118 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقرير المعوقات لخط مجاردة</title>
+    <title>200 فعل فرنسي B1</title>
     <style>
+        :root {
+            --primary-color: #0055a5;
+            --secondary-color: #ef4135;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --border-color: #e9ecef;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
         }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
         h1 {
-            text-align: center;
-            color: #007BFF;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
         }
-        p {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 30px;
+
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
         }
+
+        .search-box:focus {
+            border-color: var(--primary-color);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 15px;
             text-align: right;
         }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         th {
-            background-color: #007BFF;
+            background-color: var(--primary-color);
             color: white;
+            font-weight: bold;
         }
+
+        th:first-child {
+            border-top-right-radius: 8px;
+        }
+
+        th:last-child {
+            border-top-left-radius: 8px;
+        }
+
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #fdfdfd;
         }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
+
+        tr:hover {
+            background-color: #f1f5f9;
         }
-        button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 16px;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+
+        .french {
+            direction: ltr;
+            text-align: left;
+            font-weight: bold;
+            color: #1a252c;
+            font-family: 'Arial', sans-serif;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .pronunciation {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>تقرير المعوقات لخط مجاردة</h1>
-    <p id="currentDateTime"></p>
-   
-    <p> تاريخ كتابة التقرير : ١٣/٨/٢٠٢٤</p>
+<div class="container">
+    <header>
+        <h1>🇫🇷 200 فعل فرنسي B1</h1>
+    </header>
 
-    <table>
+    <input type="text" id="searchInput" class="search-box" onkeyup="filterTable()" placeholder="ابحث عن فعل بالفرنسية، العربية، أو النطق...">
+
+    <table id="verbsTable">
         <thead>
             <tr>
-                <th>التسلسل</th>
-                <th>الوصف</th>
+                <th>الفعل بالفرنسية</th>
+                <th>المعنى بالعربية</th>
+                <th>طريقة النطق</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>١</td><td>المقاول حفيظ لم يبدء في الاسوار</td></tr>
-            <tr><td>٢</td><td>المقاول حفيظ لم يبدء في النيم بليت</td></tr>
-            <tr><td>٣</td><td>خطاب الانذار لاحمد عسيري ( لم يقم بإنهاء اي شافت حتى تاريخه )</td></tr>
-            <tr><td>٤</td><td>مطلوب البوكلين لانهاء اعمال الامارة في بحر ابو سكينة</td></tr>
-            <tr><td>٥</td><td>سامح لم يبدء في تصنيع عدد ٧٣ غطاء الومينيوم لوجود مشاكل مالية ( فواتير سابقة لم تصرف )</td></tr>
-            <tr><td>٦</td><td>مطلوب الجاك همر لخزانات بارق و قنا</td></tr>
+            <tr><td class="french">réussir</td><td>ينجح</td><td class="pronunciation">رِيُوسِير</td></tr>
+            <tr><td class="french">éviter</td><td>يتجنب</td><td class="pronunciation">إِيفِيتِيه</td></tr>
+            <tr><td class="french">développer</td><td>يطوّر</td><td class="pronunciation">دِيفْلُوبِيه</td></tr>
+            <tr><td class="french">atteindre</td><td>يصل إلى / يحقق</td><td class="pronunciation">اتيندغ</td></tr>
+            <tr><td class="french">suggérer</td><td>يقترح</td><td class="pronunciation">سُوغْجِيرِيه</td></tr>
+            <tr><td class="french">améliorer</td><td>يحسّن</td><td class="pronunciation">أَمِيلْيُورِيه</td></tr>
+            <tr><td class="french">dépendre</td><td>يعتمد على</td><td class="pronunciation">دِيبَانْدْر</td></tr>
+            <tr><td class="french">proposer</td><td>يقترح</td><td class="pronunciation">بْغُوبُوزِيه</td></tr>
+            <tr><td class="french">permettre</td><td>يسمح</td><td class="pronunciation">بِيرْمِيتْر</td></tr>
+            <tr><td class="french">empêcher</td><td>يمنع</td><td class="pronunciation">أَمْبِيشِيه</td></tr>
+            <tr><td class="french">expliquer</td><td>يشرح</td><td class="pronunciation">إِكْسْبْلِيكِيه</td></tr>
+            <tr><td class="french">comparer</td><td>يقارن</td><td class="pronunciation">كُونْبَارِيه</td></tr>
+            <tr><td class="french">choisir</td><td>يختار</td><td class="pronunciation">شُوَازِير</td></tr>
+            <tr><td class="french">reconnaître</td><td>يتعرف على / يعترف</td><td class="pronunciation">غُكُونِيتْغْ</td></tr>
+            <tr><td class="french">soutenir</td><td>يدعم</td><td class="pronunciation">سُوتْنِير</td></tr>
+            <tr><td class="french">refuser</td><td>يرفض</td><td class="pronunciation">غُفُوزِيه</td></tr>
+            <tr><td class="french">accepter</td><td>يقبل</td><td class="pronunciation">أَكْسِيبْتِيه</td></tr>
+            <tr><td class="french">décider</td><td>يقرر</td><td class="pronunciation">دِيسِيدِيه</td></tr>
+            <tr><td class="french">essayer</td><td>يحاول</td><td class="pronunciation">إِسِيهْيِيه</td></tr>
+            <tr><td class="french">résoudre</td><td>يحل</td><td class="pronunciation">غِيزُودْغْ</td></tr>
+            <tr><td class="french">organiser</td><td>ينظم</td><td class="pronunciation">أُورْغَانِيزِيه</td></tr>
+            <tr><td class="french">préparer</td><td>يحضّر</td><td class="pronunciation">بْغِيبَارِيه</td></tr>
+            <tr><td class="french">prévoir</td><td>يتوقع / يخطط</td><td class="pronunciation">بْغِيفْوَاغْ</td></tr>
+            <tr><td class="french">analyser</td><td>يحلل</td><td class="pronunciation">أَنَالِيزِيه</td></tr>
+            <tr><td class="french">rechercher</td><td>يبحث عن</td><td class="pronunciation">غُوشِيرْشِيه</td></tr>
+            <tr><td class="french">découvrir</td><td>يكتشف</td><td class="pronunciation">دِيكُوفْغِير</td></tr>
+            <tr><td class="french">informer</td><td>يخبر / يعلم</td><td class="pronunciation">أَنْفُورْمِيه</td></tr>
+            <tr><td class="french">avertir</td><td>يحذر</td><td class="pronunciation">أَفِيرْتِير</td></tr>
+            <tr><td class="french">convaincre</td><td>يقنع</td><td class="pronunciation">كُونْفَانْكْغْ</td></tr>
+            <tr><td class="french">discuter</td><td>يناقش</td><td class="pronunciation">دِيسْكُوتِيه</td></tr>
+            <tr><td class="french">argumenter</td><td>يجادل / يقدم حجة</td><td class="pronunciation">أَرْغُومَانْتِيه</td></tr>
+            <tr><td class="french">affirmer</td><td>يؤكد</td><td class="pronunciation">أَفِيرْمِيه</td></tr>
+            <tr><td class="french">nier</td><td>ينكر</td><td class="pronunciation">نِيِيه</td></tr>
+            <tr><td class="french">mentionner</td><td>يذكر</td><td class="pronunciation">مَانْسْيُونِيه</td></tr>
+            <tr><td class="french">imaginer</td><td>يتخيل</td><td class="pronunciation">إِيمَاجِينِيه</td></tr>
+            <tr><td class="french">supposer</td><td>يفترض</td><td class="pronunciation">سُوبُوزِيه</td></tr>
+            <tr><td class="french">croire</td><td>يعتقد</td><td class="pronunciation">كْغْوَاغْ</td></tr>
+            <tr><td class="french">douter</td><td>يشك</td><td class="pronunciation">دُوتِيه</td></tr>
+            <tr><td class="french">espérer</td><td>يأمل</td><td class="pronunciation">إِسْبِيرِيه</td></tr>
+            <tr><td class="french">craindre</td><td>يخاف</td><td class="pronunciation">كْغَانْدْغْ</td></tr>
+            <tr><td class="french">s’inquiéter</td><td>يقلق</td><td class="pronunciation">سَانْكْيِيتِيه</td></tr>
+            <tr><td class="french">se réjouir</td><td>يفرح</td><td class="pronunciation">سُ غِيجُوِير</td></tr>
+            <tr><td class="french">se plaindre</td><td>يشتكي</td><td class="pronunciation">سُ بْلَانْدْغْ</td></tr>
+            <tr><td class="french">s’habituer</td><td>يعتاد</td><td class="pronunciation">سَابِيتُوِيه</td></tr>
+            <tr><td class="french">s’adapter</td><td>يتكيف</td><td class="pronunciation">سَادَابْتِيه</td></tr>
+            <tr><td class="french">se comporter</td><td>يتصرف</td><td class="pronunciation">سُ كُونْبُورْتِيه</td></tr>
+            <tr><td class="french">s’efforcer</td><td>يبذل جهدًا</td><td class="pronunciation">سِيفُورْسِيه</td></tr>
+            <tr><td class="french">oser</td><td>يجرؤ</td><td class="pronunciation">أُوزِيه</td></tr>
+            <tr><td class="french">se tromper</td><td>يخطئ</td><td class="pronunciation">سُ تْغُونْبِيه</td></tr>
+            <tr><td class="french">se souvenir</td><td>يتذكر</td><td class="pronunciation">سُ سُوفْنِير</td></tr>
+            <tr><td class="french">participier</td><td>يشارك</td><td class="pronunciation">بَارْتِيسِيبِيه</td></tr>
+            <tr><td class="french">collaborer</td><td>يتعاون</td><td class="pronunciation">كُولَابُورِيه</td></tr>
+            <tr><td class="french">contribuer</td><td>يساهم</td><td class="pronunciation">كُونْتْغِيبُوِيه</td></tr>
+            <tr><td class="french">partager</td><td>يشارك / يتقاسم</td><td class="pronunciation">بَارْتَاجِيه</td></tr>
+            <tr><td class="french">appartenir</td><td>ينتمي</td><td class="pronunciation">أَبَارْتُنِير</td></tr>
+            <tr><td class="french">communiquer</td><td>يتواصل</td><td class="pronunciation">كُومُونِيكِيه</td></tr>
+            <tr><td class="french">contacter</td><td>يتصل بـ</td><td class="pronunciation">كُونْتَاكْتِيه</td></tr>
+            <tr><td class="french">inviter</td><td>يدعو</td><td class="pronunciation">أَنْفِيتِيه</td></tr>
+            <tr><td class="french">offrir</td><td>يقدم / يهدي</td><td class="pronunciation">أُوفْغِير</td></tr>
+            <tr><td class="french">promettre</td><td>يعد</td><td class="pronunciation">بْغُومِيتْغْ</td></tr>
+            <tr><td class="french">tenir</td><td>يمسك / يحافظ على</td><td class="pronunciation">تِنِير</td></tr>
+            <tr><td class="french">respecter</td><td>يحترم</td><td class="pronunciation">غِيسْبِيكْتِيه</td></tr>
+            <tr><td class="french">critiquer</td><td>ينتقد</td><td class="pronunciation">كْغِيتِيكِيه</td></tr>
+            <tr><td class="french">pardonner</td><td>يسامح</td><td class="pronunciation">بَارْدُونِيه</td></tr>
+            <tr><td class="french">remercier</td><td>يشكر</td><td class="pronunciation">غُمْغِيسْيِيه</td></tr>
+            <tr><td class="french">féliciter</td><td>يهنئ</td><td class="pronunciation">فِيلِيسِيتِيه</td></tr>
+            <tr><td class="french">protéger</td><td>يحمي</td><td class="pronunciation">بْغُوتِيجِيه</td></tr>
+            <tr><td class="french">aider</td><td>يساعد</td><td class="pronunciation">إِيدِيه</td></tr>
+            <tr><td class="french">soigner</td><td>يعتني / يعالج</td><td class="pronunciation">سْوَانْيِيه</td></tr>
+            <tr><td class="french">s’occuper</td><td>يعتني بـ</td><td class="pronunciation">سُوكُوبِيه</td></tr>
+            <tr><td class="french">économiser</td><td>يدخر</td><td class="pronunciation">إِيكُونُمِيزِيه</td></tr>
+            <tr><td class="french">dépenser</td><td>ينفق</td><td class="pronunciation">دِيبَانْسِيه</td></tr>
+            <tr><td class="french">gagner</td><td>يكسب</td><td class="pronunciation">غَانْيِيه</td></tr>
+            <tr><td class="french">perdre</td><td>يخسر</td><td class="pronunciation">بِيرْدْغْ</td></tr>
+            <tr><td class="french">emprunter</td><td>يستعير / يقترض</td><td class="pronunciation">أَنْبْغُونْتِيه</td></tr>
+            <tr><td class="french">prêter</td><td>يقرض / يعير</td><td class="pronunciation">بْغِيتِيه</td></tr>
+            <tr><td class="french">rembourser</td><td>يسدد / يعوض</td><td class="pronunciation">غَانْبُورْسِيه</td></tr>
+            <tr><td class="french">investir</td><td>يستثمر</td><td class="pronunciation">أَنْفِيسْتِير</td></tr>
+            <tr><td class="french">louer</td><td>يستأجر / يؤجر</td><td class="pronunciation">لُوِيه</td></tr>
+            <tr><td class="french">réserver</td><td>يحجز</td><td class="pronunciation">غِيزِيرْفِيه</td></tr>
+            <tr><td class="french">annuler</td><td>يلغي</td><td class="pronunciation">أَنُولِيه</td></tr>
+            <tr><td class="french">confirmer</td><td>يؤكد</td><td class="pronunciation">كُونْفِيرْمِيه</td></tr>
+            <tr><td class="french">demander</td><td>يطلب / يسأل</td><td class="pronunciation">دُمْاندِيه</td></tr>
+            <tr><td class="french">réclamer</td><td>يطالب / يشتكي</td><td class="pronunciation">غِيكْلَامِيه</td></tr>
+            <tr><td class="french">obtenir</td><td>يحصل على</td><td class="pronunciation">أُوبْتُنِير</td></tr>
+            <tr><td class="french">recevoir</td><td>يستقبل / يتلقى</td><td class="pronunciation">غُوسِفْوَاغْ</td></tr>
+            <tr><td class="french">envoyer</td><td>يرسل</td><td class="pronunciation">أَانْفْوَايِيه</td></tr>
+            <tr><td class="french">livrer</td><td>يسلّم</td><td class="pronunciation">لِيفْغِيه</td></tr>
+            <tr><td class="french">transporter</td><td>ينقل</td><td class="pronunciation">تْغَانْسْبُورْتِيه</td></tr>
+            <tr><td class="french">conduire</td><td>يقود</td><td class="pronunciation">كُونْدْوِير</td></tr>
+            <tr><td class="french">dépasser</td><td>يتجاوز</td><td class="pronunciation">دِيبَاسِيه</td></tr>
+            <tr><td class="french">garer</td><td>يركن</td><td class="pronunciation">غَاغِيه</td></tr>
+            <tr><td class="french">atterrir</td><td>يهبط</td><td class="pronunciation">أَتِيرِير</td></tr>
+            <tr><td class="french">décoller</td><td>يقلع</td><td class="pronunciation">دِيكُولِيه</td></tr>
+            <tr><td class="french">voyager</td><td>يسافر</td><td class="pronunciation">فُوَايَاجِيه</td></tr>
+            <tr><td class="french">séjourner</td><td>يقيم</td><td class="pronunciation">سِيجُورْنِيه</td></tr>
+            <tr><td class="french">visiter</td><td>يزور</td><td class="pronunciation">فِيزِيتِيه</td></tr>
+            <tr><td class="french">explorer</td><td>يستكشف</td><td class="pronunciation">إِكْسْبْلُورِيه</td></tr>
+            <tr><td class="french">profiter</td><td>يستمتع / يستفيد</td><td class="pronunciation">بْغُوفِيتِيه</td></tr>
+            <tr><td class="french">se détendre</td><td>يسترخي</td><td class="pronunciation">سُ دِيتَانْدْغْ</td></tr>
+            <tr><td class="french">s’amuser</td><td>يستمتع</td><td class="pronunciation">سَامُوزِيه</td></tr>
+            <tr><td class="french">camper</td><td>يخيم</td><td class="pronunciation">كانْبِيه</td></tr>
+            <tr><td class="french">naviguer</td><td>يبحر / يتصفح</td><td class="pronunciation">نَافِيجِيه</td></tr>
+            <tr><td class="french">se déplacer</td><td>يتنقل</td><td class="pronunciation">سُ دِيبْلَاسِيه</td></tr>
+            <tr><td class="french">traverser</td><td>يعبر</td><td class="pronunciation">تْغَافِيرْسِيه</td></tr>
+            <tr><td class="french">s’approcher</td><td>يقترب</td><td class="pronunciation">سَابْغُوشِيه</td></tr>
+            <tr><td class="french">s’éloigner</td><td>يبتعد</td><td class="pronunciation">سِيلُوَانْيِيه</td></tr>
+            <tr><td class="french">se diriger</td><td>يتجه</td><td class="pronunciation">سُ دِيرِيجِيه</td></tr>
+            <tr><td class="french">construire</td><td>يبني</td><td class="pronunciation">كُونْسْتْغُوِير</td></tr>
+            <tr><td class="french">détruire</td><td>يدمر</td><td class="pronunciation">دِيتْغْوِير</td></tr>
+            <tr><td class="french">réparer</td><td>يصلح</td><td class="pronunciation">غِيبَارِيه</td></tr>
+            <tr><td class="french">fonctionner</td><td>يعمل</td><td class="pronunciation">فُونْكْسْيُونِيه</td></tr>
+            <tr><td class="french">installer</td><td>يركب / يثبت</td><td class="pronunciation">أَنْسْتَالِيه</td></tr>
+            <tr><td class="french">brancher</td><td>يوصل بالكهرباء</td><td class="pronunciation">بْغَانْشِيه</td></tr>
+            <tr><td class="french">débrancher</td><td>يفصل</td><td class="pronunciation">دِيبْغَانْشِيه</td></tr>
+            <tr><td class="french">charger</td><td>يشحن / يحمل</td><td class="pronunciation">شَارْجِيه</td></tr>
+            <tr><td class="french">télécharger</td><td>ينزل / يحمل</td><td class="pronunciation">تِيلِيشَارْجِيه</td></tr>
+            <tr><td class="french">imprimer</td><td>يطبع</td><td class="pronunciation">أَنْبْغِيمِيه</td></tr>
+            <tr><td class="french">enregistrer</td><td>يسجل / يحفظ</td><td class="pronunciation">أَنْغِيجِيسْتْغِيه</td></tr>
+            <tr><td class="french">supprimer</td><td>يحذف</td><td class="pronunciation">سُوبْغِيمِيه</td></tr>
+            <tr><td class="french">copier</td><td>ينسخ</td><td class="pronunciation">كُوبْيِيه</td></tr>
+            <tr><td class="french">coller</td><td>يلصق</td><td class="pronunciation">كُولِيه</td></tr>
+            <tr><td class="french">modifier</td><td>يعدّل</td><td class="pronunciation">مُودِيفِيه</td></tr>
+            <tr><td class="french">actualiser</td><td>يحدّث</td><td class="pronunciation">أَكْتُوَالِيزِيه</td></tr>
+            <tr><td class="french">publier</td><td>ينشر</td><td class="pronunciation">بْلِوبْلِيِيه</td></tr>
+            <tr><td class="french">téléphoner</td><td>يتصل هاتفيًا</td><td class="pronunciation">تِيلِيفُونِيه</td></tr>
+            <tr><td class="french">renseigner</td><td>يزوّد بالمعلومات</td><td class="pronunciation">غَانْسِايْنِيه</td></tr>
+            <tr><td class="french">consulter</td><td>يستشير / يراجع</td><td class="pronunciation">كُونْسُولْتِيه</td></tr>
+            <tr><td class="french">étudier</td><td>يدرس</td><td class="pronunciation">إِيتُودْيِيه</td></tr>
+            <tr><td class="french">apprendre</td><td>يتعلم</td><td class="pronunciation">أَبْغَانْدْغْ</td></tr>
+            <tr><td class="french">enseigner</td><td>يعلّم</td><td class="pronunciation">أَنْسِينْيِيه</td></tr>
+            <tr><td class="french">réviser</td><td>يراجع</td><td class="pronunciation">غِيفِيزِيه</td></tr>
+            <tr><td class="french">mémoriser</td><td>يحفظ</td><td class="pronunciation">مِيمُورِيزِيه</td></tr>
+            <tr><td class="french">s’entraîner</td><td>يتتدرب</td><td class="pronunciation">سَانْتْغِينِيه</td></tr>
+            <tr><td class="french">se concentrer</td><td>يركز</td><td class="pronunciation">سُ كُونْسَانْتْغِيه</td></tr>
+            <tr><td class="french">comprendre</td><td>يفهم</td><td class="pronunciation">كُونْبْغَانْدْغْ</td></tr>
+            <tr><td class="french">résumer</td><td>يلخص</td><td class="pronunciation">غِيزُومِيه</td></tr>
+            <tr><td class="french">traduire</td><td>يترجم</td><td class="pronunciation">تْغَادْوِير</td></tr>
+            <tr><td class="french">exprimer</td><td>يعبّر</td><td class="pronunciation">إِكْسْبْغِيمِيه</td></tr>
+            <tr><td class="french">décrire</td><td>يصف</td><td class="pronunciation">دِيكْغِير</td></tr>
+            <tr><td class="french">raconter</td><td>يحكي</td><td class="pronunciation">غَاكُونْتِيه</td></tr>
+            <tr><td class="french">déclarer</td><td>يصرح</td><td class="pronunciation">دِيكْلَاغِيه</td></tr>
+            <tr><td class="french">annoncer</td><td>يعلن</td><td class="pronunciation">أَنُونْسِيه</td></tr>
+            <tr><td class="french">prévenir</td><td>يحذر / يمنع</td><td class="pronunciation">بْغِيفْنِير</td></tr>
+            <tr><td class="french">avouer</td><td>يعترف</td><td class="pronunciation">أَفُوِيه</td></tr>
+            <tr><td class="french">cacher</td><td>يخفي</td><td class="pronunciation">كَاشِيه</td></tr>
+            <tr><td class="french">révéler</td><td>يكشف</td><td class="pronunciation">غِيفِيلِيه</td></tr>
+            <tr><td class="french">soupçonner</td><td>يشك في</td><td class="pronunciation">سُوبْسُونِيه</td></tr>
+            <tr><td class="french">accuser</td><td>يتهم</td><td class="pronunciation">أَكُوزِيه</td></tr>
+            <tr><td class="french">dénoncer</td><td>يبلغ / يندد</td><td class="pronunciation">دِينُونْسِيه</td></tr>
+            <tr><td class="french">examiner</td><td>يفحص</td><td class="pronunciation">إِكْزَامِينِيه</td></tr>
+            <tr><td class="french">détecter</td><td>يكتشف</td><td class="pronunciation">دِيتِيكْتِيه</td></tr>
+            <tr><td class="french">identifier</td><td>يحدد / يتعرف على</td><td class="pronunciation">إِيدَانْتِيفْيِيه</td></tr>
+            <tr><td class="french">vérifier</td><td>يتحقق</td><td class="pronunciation">فِيرِيفْيِيه</td></tr>
+            <tr><td class="french">enquêter</td><td>يحقق / يجري تحقيقًا</td><td class="pronunciation">أَنْكِيتِيه</td></tr>
+            <tr><td class="french">documenter</td><td>يوثق</td><td class="pronunciation">دُوكُومَانْتِيه</td></tr>
+            <tr><td class="french">classer</td><td>يصنف</td><td class="pronunciation">كْلَاسِيه</td></tr>
+            <tr><td class="french">rassembler</td><td>يجمع</td><td class="pronunciation">غَاسَانْبْلِيه</td></tr>
+            <tr><td class="french">stocker</td><td>يخزن</td><td class="pronunciation">سْتُوكِيه</td></tr>
+            <tr><td class="french">gérer</td><td>يدير</td><td class="pronunciation">جِيرِيه</td></tr>
+            <tr><td class="french">diriger</td><td>يدير / يقود</td><td class="pronunciation">دِيرِيجِيه</td></tr>
+            <tr><td class="french">superviser</td><td>يشرف</td><td class="pronunciation">سُوبِيرْفِيزِيه</td></tr>
+            <tr><td class="french">coordonner</td><td>ينسق</td><td class="pronunciation">كُوُورْدُونِيه</td></tr>
+            <tr><td class="french">déléguer</td><td>يفوض</td><td class="pronunciation">دِيلِيجِيه</td></tr>
+            <tr><td class="french">négocier</td><td>يتفاوض</td><td class="pronunciation">نِيجُوسْيِيه</td></tr>
+            <tr><td class="french">recruter</td><td>يوظف</td><td class="pronunciation">غِيكْغُوتِيه</td></tr>
+            <tr><td class="french">embaucher</td><td>يوظف</td><td class="pronunciation">أَنْبُوشِيه</td></tr>
+            <tr><td class="french">licencier</td><td>يفصل من العمل</td><td class="pronunciation">لِيسَانْسْيِيه</td></tr>
+            <tr><td class="french">démissionner</td><td>يستقيل</td><td class="pronunciation">دِيمِيسْيُونِيه</td></tr>
+            <tr><td class="french">promouvoir</td><td>يرقّي / يروّج</td><td class="pronunciation">بْغُومُوفْوَاغْ</td></tr>
+            <tr><td class="french">former</td><td>يدرب / يشكل</td><td class="pronunciation">فُورْمِيه</td></tr>
+            <tr><td class="french">spécialiser</td><td>يخصص</td><td class="pronunciation">سْبِيسْيَالِيزِيه</td></tr>
+            <tr><td class="french">exercer</td><td>يمارس مهنة</td><td class="pronunciation">إِغْزِيرْسِيه</td></tr>
+            <tr><td class="french">accomplir</td><td>ينجز</td><td class="pronunciation">أَكُونْبْلِير</td></tr>
+            <tr><td class="french">assumer</td><td>يتحمل / يتولى</td><td class="pronunciation">أَسُومِيه</td></tr>
+            <tr><td class="french">responsabiliser</td><td>يحمل المسؤولية</td><td class="pronunciation">غِيسْبُونْسَابِيلِيزِيه</td></tr>
+            <tr><td class="french">s’engager</td><td>يلتزم</td><td class="pronunciation">سَانْجَاجِيه</td></tr>
+            <tr><td class="french">s’impliquer</td><td>ينخرط</td><td class="pronunciation">سَانْبْلِيكِيه</td></tr>
+            <tr><td class="french">se débrouiller</td><td>يتدبر أمره</td><td class="pronunciation">سُ دِيبْغُوِيه</td></tr>
+            <tr><td class="french">se débattre</td><td>يكافح</td><td class="pronunciation">سُ دِيبَاتْغْ</td></tr>
+            <tr><td class="french">affronter</td><td>يواجه</td><td class="pronunciation">أَفْغُونْتِيه</td></tr>
+            <tr><td class="french">résister</td><td>يقاوم</td><td class="pronunciation">غِيزِيسْتِيه</td></tr>
+            <tr><td class="french">combattre</td><td>يكافح / يحارب</td><td class="pronunciation">كُونْبَاتْغْ</td></tr>
+            <tr><td class="french">surmonter</td><td>يتغلب على</td><td class="pronunciation">سُورْمُونْتِيه</td></tr>
+            <tr><td class="french">faire face</td><td>يواجه</td><td class="pronunciation">فِيرْ فَاس</td></tr>
+            <tr><td class="french">réduire</td><td>يقلل</td><td class="pronunciation">غِيدْوِير</td></tr>
+            <tr><td class="french">augmenter</td><td>يزيد</td><td class="pronunciation">أُوغْمَانْتِيه</td></tr>
+            <tr><td class="french">élargir</td><td>يوسع</td><td class="pronunciation">إِيلَارْجِير</td></tr>
+            <tr><td class="french">étendre</td><td>يمدد / يوسع</td><td class="pronunciation">إِيتَانْدْغْ</td></tr>
+            <tr><td class="french">remplacer</td><td>يستبدل</td><td class="pronunciation">غُانْبْلَاسِيه</td></tr>
+            <tr><td class="french">transformer</td><td>يحول</td><td class="pronunciation">تْغَانْسْفُورْمِيه</td></tr>
+            <tr><td class="french">intégrer</td><td>يدمج</td><td class="pronunciation">أَنْتِيجْغِيه</td></tr>
+            <tr><td class="french">combiner</td><td>يجمع / يدمج</td><td class="pronunciation">كُونْبِينِيه</td></tr>
+            <tr><td class="french">optimiser</td><td>يحسن / يجعل أكثر كفاءة</td><td class="pronunciation">أُوبْتِيمِيزِيه</td></tr>
+            <tr><td class="french">acquérir</td><td>يكتسب</td><td class="pronunciation">أَكِيرِير</td></tr>
+            <tr><td class="french">s’apercevoir</td><td>يلاحظ / يدرك</td><td class="pronunciation">سَابِيرْسِفْوَاغ</td></tr>
+            <tr><td class="french">bénéficier</td><td>يستفيد</td><td class="pronunciation">بِنِيفِيسْيِيه</td></tr>
+            <tr><td class="french">bouleverser</td><td>يقلب / يربك</td><td class="pronunciation">بُولْفِيرْسِيه</td></tr>
+            <tr><td class="french">décourager</td><td>يثبط / يحبط</td><td class="pronunciation">دِيكُوغَاجِيه</td></tr>
+            <tr><td class="french">défendre</td><td>يدافع عن</td><td class="pronunciation">دِيفَانْدْغْ</td></tr>
+            <tr><td class="french">déterminer</td><td>يحدد</td><td class="pronunciation">دِيتِيرْمِينِيه</td></tr>
+            <tr><td class="french">échapper</td><td>يهرب / يفلت</td><td class="pronunciation">إِيشَابِيه</td></tr>
+            <tr><td class="french">évaluer</td><td>يقيّم</td><td class="pronunciation">إِيفَالُوِيه</td></tr>
+            <tr><td class="french">évoluer</td><td>يتطور</td><td class="pronunciation">إِيفُولُوِيه</td></tr>
+            <tr><td class="french">exiger</td><td>يطالب بـ / يتطلب</td><td class="pronunciation">إِغْزِيجِيه</td></tr>
+            <tr><td class="french">exploiter</td><td>يستغل</td><td class="pronunciation">إِكْسْبْلْوَاتِيه</td></tr>
+            <tr><td class="french">favoriser</td><td>يشجع / يعزز</td><td class="pronunciation">فَافُورِيزِيه</td></tr>
+            <tr><td class="french">fournir</td><td>يوفر</td><td class="pronunciation">فُورْنِير</td></tr>
+            <tr><td class="french">franchir</td><td>يتجاوز / يعبر</td><td class="pronunciation">فْغَانْشِير</td></tr>
+            <tr><td class="french">garantir</td><td>يضمن</td><td class="pronunciation">غَاغَانْتِير</td></tr>
+            <tr><td class="french">hésiter</td><td>يتردد</td><td class="pronunciation">إِيزِيتِيه</td></tr>
+            <tr><td class="french">ignorer</td><td>يتجاهل</td><td class="pronunciation">إِينْيُورِيه</td></tr>
+            <tr><td class="french">influencer</td><td>يؤثر في</td><td class="pronunciation">أَنْفْلُوَانْسِيه</td></tr>
+            <tr><td class="french">intervenir</td><td>يتدخل</td><td class="pronunciation">أَانْتِيرْفْنِير</td></tr>
+            <tr><td class="french">justifier</td><td>يبرر</td><td class="pronunciation">جُوسْتِيفْيِيه</td></tr>
+            <tr><td class="french">maintenir</td><td>يحافظ على</td><td class="pronunciation">مَانْتْنِير</td></tr>
+            <tr><td class="french">mériter</td><td>يستحق</td><td class="pronunciation">مِيرِيتِيه</td></tr>
+            <tr><td class="french">négliger</td><td>يهمل</td><td class="pronunciation">نِيغْلِيجِيه</td></tr>
+            <tr><td class="french">nuire</td><td>يضر</td><td class="pronunciation">نُوِير</td></tr>
+            <tr><td class="french">privilégier</td><td>يفضل</td><td class="pronunciation">بْغِيفِيلِيجِيه</td></tr>
+            <tr><td class="french">procéder</td><td>يقوم بـ / يتابع</td><td class="pronunciation">بْغُوسِيدِيه</td></tr>
+            <tr><td class="french">provenir</td><td>يأتي من / ينشأ من</td><td class="pronunciation">بْغُوفْنِير</td></tr>
+            <tr><td class="french">reconstruire</td><td>يعيد البناء</td><td class="pronunciation">غُوكُونْسْتْغُوِير</td></tr>
+            <tr><td class="french">recourir</td><td>يلجأ إلى</td><td class="pronunciation">غُوكُورِير</td></tr>
+            <tr><td class="french">redouter</td><td>يخشى</td><td class="pronunciation">غُودُوتِيه</td></tr>
+            <tr><td class="french">renforcer</td><td>يعزز / يقوي</td><td class="pronunciation">غَانْفُورْسِيه</td></tr>
+            <tr><td class="french">renoncer</td><td>يتخلى عن</td><td class="pronunciation">غَانُونْسِيه</td></tr>
+            <tr><td class="french">reprocher</td><td>يلوم</td><td class="pronunciation">غُوبْغُوشِيه</td></tr>
+            <tr><td class="french">résulter</td><td>ينتج / ينجم</td><td class="pronunciation">غِيزُولْتِيه</td></tr>
+            <tr><td class="french">satisfaire</td><td>يرضي / يلبي</td><td class="pronunciation">سَاتِيسْفِير</td></tr>
+            <tr><td class="french">susciter</td><td>يثير / يسبب</td><td class="pronunciation">سُوسِيتِيه</td></tr>
+            <tr><td class="french">tolérer</td><td>يتسامح مع</td><td class="pronunciation">تُولِيرِيه</td></tr>
+            <tr><td class="french">transmettre</td><td>ينقل</td><td class="pronunciation">تْغَانْسْمِيتْغْ</td></tr>
+            <tr><td class="french">vaincre</td><td>يهزم</td><td class="pronunciation">فَانْكْغْ</td></tr>
+            <tr><td class="french">accroître</td><td>يزيد / ينمي</td><td class="pronunciation">أَكْغْوَاتْغْ</td></tr>
+            <tr><td class="french">admettre</td><td>يعترف / يقبل</td><td class="pronunciation">أَدْمِيتْغْ</td></tr>
+            <tr><td class="french">assister</td><td>يحضر / يساعد</td><td class="pronunciation">أَسِيسْتِيه</td></tr>
+            <tr><td class="french">assurer</td><td>يضمن / يؤمّن</td><td class="pronunciation">أَسُوغِيه</td></tr>
+            <tr><td class="french">concerner</td><td>يتعلق بـ</td><td class="pronunciation">كُونْسِيرْنِيه</td></tr>
+            <tr><td class="french">conclure</td><td>يستنتج / يختتم</td><td class="pronunciation">كُونْكْلُوغْ</td></tr>
+            <tr><td class="french">contenir</td><td>يحتوي</td><td class="pronunciation">كُونْتْنِير</td></tr>
+            <tr><td class="french">correspondre</td><td>يتوافق / يطابق</td><td class="pronunciation">كُوغِيسْبُونْدْغْ</td></tr>
+            <tr><td class="french">décevoir</td><td>يخيب أمل</td><td class="pronunciation">دِيسُفْوَاغ</td></tr>
+            <tr><td class="french">déclencher</td><td>يطلق / يسبب</td><td class="pronunciation">دِيكْلَانْشِيه</td></tr>
+            <tr><td class="french">déduire</td><td>يستنتج</td><td class="pronunciation">دِيدْوِير</td></tr>
+            <tr><td class="french">disposer</td><td>يتوفر على / يرتب</td><td class="pronunciation">دِيسْبُوزِيه</td></tr>
+            <tr><td class="french">diversifier</td><td>ينوع</td><td class="pronunciation">دِيفِيرْسِيفْيِيه</td></tr>
+            <tr><td class="french">émerger</td><td>يظهر / يبرز</td><td class="pronunciation">إِيمِيرْجِيه</td></tr>
+            <tr><td class="french">envisager</td><td>يفكر في / ينظر في</td><td class="pronunciation">أَنْفِيزَاجِيه</td></tr>
+            <tr><td class="french">établir</td><td>يؤسس / يحدد</td><td class="pronunciation">إِيتَابْلِير</td></tr>
+            <tr><td class="french">exclure</td><td>يستبعد</td><td class="pronunciation">إِكْسْكْلُوغْ</td></tr>
+            <tr><td class="french">imposer</td><td>يفرض</td><td class="pronunciation">أَنْبُوزِيه</td></tr>
+            <tr><td class="french">inciter</td><td>يحفز / يشجع</td><td class="pronunciation">أَنْسِيتِيه</td></tr>
+            <tr><td class="french">interdire</td><td>يمنع</td><td class="pronunciation">أَانْتِيرْدِير</td></tr>
+            <tr><td class="french">interrompre</td><td>يقاطع / يوقف</td><td class="pronunciation">أَانْتِيرُومْبْغْ</td></tr>
+            <tr><td class="french">introduire</td><td>يقدم / يُدخل</td><td class="pronunciation">أَانْتْغُوِير</td></tr>
+            <tr><td class="french">manquer</td><td>يفتقد / يفشل في</td><td class="pronunciation">مَانْكِيه</td></tr>
+            <tr><td class="french">menacer</td><td>يهدد</td><td class="pronunciation">مْنَاسِيه</td></tr>
+            <tr><td class="french">nécessiter</td><td>يتطلب</td><td class="pronunciation">نِيسِيسِيتِيه</td></tr>
+            <tr><td class="french">observer</td><td>يلاحظ / يلتزم</td><td class="pronunciation">أُوبْسِيرْفِيه</td></tr>
+            <tr><td class="french">persister</td><td>يستمر / يصر</td><td class="pronunciation">بِيرْسِيسْتِيه</td></tr>
+            <tr><td class="french">préserver</td><td>يحافظ على</td><td class="pronunciation">بْغِيزِيرْفِيه</td></tr>
+            <tr><td class="french">prouver</td><td>يثبت</td><td class="pronunciation">بْغُوفِيه</td></tr>
+            <tr><td class="french">réagir</td><td>يتفاعل</td><td class="pronunciation">غِياجِير</td></tr>
+            <tr><td class="french">réaliser</td><td>يحقق / يدرك</td><td class="pronunciation">غِيَالِيزِيه</td></tr>
+            <tr><td class="french">remédier</td><td>يعالج / يصلح</td><td class="pronunciation">غُمِيدْيِيه</td></tr>
+            <tr><td class="french">remettre</td><td>يعيد / يسلم</td><td class="pronunciation">غُمْتْغْ</td></tr>
+            <tr><td class="french">représenter</td><td>يمثل</td><td class="pronunciation">غُوبْغِيزَانْتِيه</td></tr>
+            <tr><td class="french">requérir</td><td>يتطلب / يطلب رسميًا</td><td class="pronunciation">غُوكِيرِير</td></tr>
+            <tr><td class="french">retenir</td><td>يحتفظ بـ / يتذكر</td><td class="pronunciation">غُوتْنِير</td></tr>
+            <tr><td class="french">s’opposer</td><td>يعارض</td><td class="pronunciation">سُوبُوزِيه</td></tr>
+            <tr><td class="french">subir</td><td>يعاني / يخضع لـ</td><td class="pronunciation">سُوبِير</td></tr>
+            <tr><td class="french">survenir</td><td>يحدث فجأة</td><td class="pronunciation">سُورْفْنِير</td></tr>
+            <tr><td class="french">témoigner</td><td>يشهد</td><td class="pronunciation">تِيمْوَانْيِيه</td></tr>
+            <tr><td class="french">valoriser</td><td>يقدّر / يعزز قيمة</td><td class="pronunciation">فَالُورِيزِيه</td></tr>
+            <tr><td class="french">veiller</td><td>يسهر على / يحرص</td><td class="pronunciation">فَايِيه</td></tr>
+            <tr><td class="french">approfondir</td><td>يعمّق</td><td class="pronunciation">أَبْغُوفُونْدِير</td></tr>
+            <tr><td class="french">enrichir</td><td>يثري</td><td class="pronunciation">أَنْغِيشِير</td></tr>
         </tbody>
     </table>
+</div>
 
-    <div class="button-container">
-        <button onclick="printTable()">طباعة الجدول</button>
-        <button onclick="copyTable()">نسخ الجدول</button>
-    </div>
+<script>
+    function filterTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toLowerCase();
+        table = document.getElementById("verbsTable");
+        tr = table.getElementsByTagName("tr");
 
-    <script>
-        // Set current date and time
-        document.getElementById('currentDateTime').innerText = `التاريخ والوقت الحالي: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}`;
-
-        // Function to print the table
-        function printTable() {
-            const originalContent = document.body.innerHTML;
-            const tableContent = document.querySelector('table').outerHTML;
-            document.body.innerHTML = tableContent;
-            window.print();
-            document.body.innerHTML = originalContent;
+        for (i = 1; i < tr.length; i++) {
+            tr[i].style.display = "none";
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    }
+                }
+            }
         }
+    }
+</script>
 
-        // Function to copy the table content
-        function copyTable() {
-            const table = document.querySelector('table').outerHTML;
-            const tempTextArea = document.createElement("textarea");
-            tempTextArea.value = table;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextArea);
-            alert("تم نسخ محتوى الجدول إلى الحافظة!");
-        }
-    </script>
-    
 </body>
 </html>
